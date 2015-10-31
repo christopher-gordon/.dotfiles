@@ -1,0 +1,57 @@
+[alias]
+    co = checkout
+    cob = checkout -b
+    st = status
+    ci = commit
+    ci-keep = commit --no-edit
+    commit-keep = commit --no-edit
+    amend = commit --amend
+    amend-keep = commit --amend --no-edit
+    l3 = !git --no-pager log -3
+    l4 = !git --no-pager log -4
+    l5 = !git --no-pager log -5
+    l6 = !git --no-pager log -6
+    show-name = show --name-only
+    show-name3 = show --name-only -3
+    cached = diff --cached
+    addall = add --all
+    add-all = add --all
+    fetchall = fetch --all
+    fetch-all = fetch --all
+    lol = log --pretty=oneline --abbrev-commit --graph --decorate
+    tags = tag -l -n1
+    diff-color= diff --color-words
+    patch= format-patch
+    ctags = !~/.git_template/hooks/ctags
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = cyan
+
+[color]
+    ui = true
+[color "diff"]
+    whitespace = red reverse
+[core]
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[core]
+    editor = /usr/bin/vim
+    editer = vim
+    excludesfile = /Users/chrisg/.gitignore_global
+    #pager = cat
+[user]
+    name = Chris Gordon
+    email = chrisg@groupon.com
+[init]
+    templatedir = ~/.git_template
