@@ -7,6 +7,7 @@
     commit-keep = commit --no-edit
     amend = commit --amend
     amend-keep = commit --amend --no-edit
+    amend-noedit = commit --amend --no-edit
     l3 = !git --no-pager log -3
     l4 = !git --no-pager log -4
     l5 = !git --no-pager log -5
@@ -24,7 +25,7 @@
     patch= format-patch
     ctags = !~/.git_template/hooks/ctags
 [color]
-    ui = auto
+    ui = true
 [color "branch"]
     current = yellow reverse
     local = yellow
@@ -34,15 +35,11 @@
     frag = magenta bold
     old = red bold
     new = green bold
+    whitespace = red reverse
 [color "status"]
     added = green
     changed = yellow
     untracked = cyan
-
-[color]
-    ui = true
-[color "diff"]
-    whitespace = red reverse
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [core]
