@@ -188,6 +188,7 @@ alias connectuserdatasynclup1='ssh users_service_deploy@user-sync-utility1.lup1'
 alias connectuserdatasyncuat='ssh users_service_deploy@user-sync-utility1-uat.snc1'
 alias connectuserdatasyncstaging='ssh users_service_deploy@user-sync-utility1-staging.snc1'
 alias connectcds='ssh consumer_deploy@consumer-data-service-utility1.snc1'
+alias connectcdsuat='ssh consumer_deploy@consumer-data-service-utility1-uat.snc1'
 alias connectcdsapp='ssh consumer_deploy@consumer-data-service-app1.snc1'
 
 alias addssh="ssh-add ~/.ssh/* && eval 'ssh-agent' && ssh-ad"
