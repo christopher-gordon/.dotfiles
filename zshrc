@@ -183,6 +183,7 @@ alias connectusersuatlup1='ssh users_service_deploy@users-service-utility1-uat.l
 alias connectusersappuat='ssh users_service_deploy@users-service-app1-uat.snc1'
 alias connectusersstaging='ssh users_service_deploy@users-service-utility1-staging.snc1'
 alias connectusersstaging-perf='ssh users_service_deploy@users-service-app2-staging.snc1'
+alias connectusersspare='ssh users_service_deploy@users-service-spare1.snc1'
 alias connectuserdatasync='ssh users_service_deploy@user-sync-utility1.snc1'
 alias connectuserdatasynclup1='ssh users_service_deploy@user-sync-utility1.lup1'
 alias connectuserdatasyncuat='ssh users_service_deploy@user-sync-utility1-uat.snc1'
