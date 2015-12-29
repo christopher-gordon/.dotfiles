@@ -256,6 +256,7 @@ alias cds='cd ~/work/consumer-data-service'
 alias gts='cd ~/work/groupon-tender-service'
 alias sdr='cd ~/work/sdr'
 alias doorman='cd ~/work/doorman'
+alias force-password-reset='cd ~/work/force-password-reset'
 
 alias php_migrate='APP_ENV=development ./scripts/doctrine migrations:migrate'
 alias php_generate_migration='APP_ENV=development ./scripts/doctrine migrations:generate'
