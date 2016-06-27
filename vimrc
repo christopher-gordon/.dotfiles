@@ -93,13 +93,13 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 "set nocompatible
 
 
-"" highlight characters in lines that are over 120 chars long
+"" highlight characters in lines that are over 128 chars long
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%121v.\+/
+"match OverLength /\%129v.\+/
 "
 augroup vimrc_autocmds
   autocmd BufEnter *.rb highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-  autocmd BufEnter *.rb match OverLength /\%121v.\+/
+  autocmd BufEnter *.rb match OverLength /\%129v.\+/
 augroup END
 
 " ================= Turn Off Swap Files ==================
@@ -162,8 +162,7 @@ nnoremap <Leader>r :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>l :call RunNearestSpec()<CR>
 nnoremap <Leader>p :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
-
-let g:rspec_runner = "os_x_iterm"
+let g:rspec_runner = "os_x_iterm2"
 
 "have Ack use Ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -186,3 +185,9 @@ map <Leader>ct :!ctags -R .<CR>
 
 " Pull up tagbar using leader b
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
