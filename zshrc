@@ -15,6 +15,8 @@ export PWA='/Users/chrisg/work/groupon'
 
 DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql55/5.5.30/lib:$DYLD_LIBRARY_PATH"
 
+# enable vi mode
+bindkey -v
 
 #. ~/.vim/bundle/vim-powerline/bindings/zsh/powerline.zsh
 
@@ -79,8 +81,8 @@ export PATH="/usr/local/bin:/usr/local/php5/bin:/Users/chrisg/bin:/usr/bin:/bin:
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-
-
+export NVM_DIR="/Users/chrisg/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 ######################### OLD - FROM BASHRC ################################################################################
 export PATH="$HOME/bin:$PATH"
@@ -102,6 +104,7 @@ alias gfetch='git fetch'
 alias gprune='git remote prune origin'
 alias gprune_local="git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1};"
 alias li='ls -laF'
+alias ll='ls -la'
 alias l3='git log -3'
 alias gitlog3='git --no-pager log -3'
 alias gitpage='git --no-pager'
@@ -174,6 +177,7 @@ alias connectcentraldb='ssh commeng-db1.snc1'
 alias connectcc='ssh appops-command-center1.snc1'
 alias connectuatcc='ssh appops-command-center1-uat.snc1'
 alias connectusers='ssh users_service_deploy@users-service-utility1.snc1'
+alias connectusers2='ssh users_service_deploy@users-service-utility2.snc1'
 alias connectuserslup1='ssh users_service_deploy@users-service-utility1.lup1'
 alias connectusersapp='ssh users_service_deploy@users-service-app1.snc1'
 alias connectusersapplup1='ssh users_service_deploy@users-service-app1.lup1'
@@ -183,12 +187,15 @@ alias connectusersuatlup1='ssh users_service_deploy@users-service-utility1-uat.l
 alias connectusersappuat='ssh users_service_deploy@users-service-app1-uat.snc1'
 alias connectusersstaging='ssh users_service_deploy@users-service-utility1-staging.snc1'
 alias connectusersstaging-perf='ssh users_service_deploy@users-service-app2-staging.snc1'
+alias connectusersstaginglup1='ssh users_service_deploy@users-service-utility1-staging.lup1'
 alias connectusersspare='ssh users_service_deploy@users-service-spare1.snc1'
 alias connectuserdatasync='ssh users_service_deploy@user-sync-utility1.snc1'
+alias connectuserdatasync2='ssh users_service_deploy@user-sync-utility2.snc1'
 alias connectuserdatasynclup1='ssh users_service_deploy@user-sync-utility1.lup1'
 alias connectuserdatasyncuat='ssh users_service_deploy@user-sync-utility1-uat.snc1'
 alias connectuserdatasyncstaging='ssh users_service_deploy@user-sync-utility1-staging.snc1'
 alias connectcds='ssh consumer_deploy@consumer-data-service-utility1.snc1'
+alias connectcds2='ssh consumer_deploy@consumer-data-service-utility2.snc1'
 alias connectcdsuat='ssh consumer_deploy@consumer-data-service-utility1-uat.snc1'
 alias connectcdsapp='ssh consumer_deploy@consumer-data-service-app1.snc1'
 
@@ -236,6 +243,8 @@ alias groupon='cd ~/work/groupon && GRPN'
 alias pwa='cd ~/work/groupon && GRPN'
 alias p0='rvm use ruby-1.9.3-p0'
 alias aodbot='cd ~/work/aod-bot'
+alias bot='cd ~/work/users-team-bot'
+alias users-bot='cd ~/work/users-team-bot'
 alias tree='cd ~/work/dev_decision_tree'
 alias ddt='cd ~/work/dev_decision_tree'
 alias cc='cd ~/work/command-center'
@@ -276,6 +285,7 @@ alias compile_assets='rake assets:precompile RAILS_ENV=production'
 alias hc='heroku run console'
 alias hlogs='heroku logs'
 alias heroku_compile_assets='heroku run rake assets:precompile RAILS_ENV=production'
+alias haskell="cd ~/personal/haskell"
 
 #users
 alias use_jruby='source script/use_jruby'
@@ -345,4 +355,5 @@ function gendate {
         date +%Y.%m.%d_%H.%M
 }
 #########################################
+
 
