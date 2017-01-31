@@ -13,7 +13,7 @@ export CATALINA_HOME=/usr/local/Cellar/tomcat/8.0.14/libexec
 export JAVA_HOME=`/usr/libexec/java_home`
 export PWA='/Users/chrisg/work/groupon'
 
-DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql55/5.5.30/lib:$DYLD_LIBRARY_PATH"
+# DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql55/5.5.30/lib:$DYLD_LIBRARY_PATH"
 
 # enable vi mode
 bindkey -v
@@ -64,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/php5/bin:/Users/chrisg/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/chrisg/.rvm/bin:/Users/chrisg/.rvm/bin"
+export PATH="$PATH:/usr/local/bin:/usr/local/php5/bin:/Users/chrisg/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin" #":/Users/chrisg/.rvm/bin:/Users/chrisg/.rvm/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -87,19 +87,20 @@ export NVM_DIR="/Users/chrisg/.nvm"
 ######################### OLD - FROM BASHRC ################################################################################
 export PATH="$HOME/bin:$PATH"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
-source ~/.rvm/scripts/rvm
+# source ~/.rvm/scripts/rvm
 
-export RUBY_HEAP_MIN_SLOTS=500000 
-export RUBY_HEAP_SLOTS_INCREMENT=250000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=50000000
+# export RUBY_HEAP_MIN_SLOTS=500000 
+# export RUBY_HEAP_SLOTS_INCREMENT=250000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# export RUBY_GC_MALLOC_LIMIT=50000000
 
 alias gl='git log'
 alias gpom='git pull origin master'
+alias gpum='git pull upstream master'
 alias gfetch='git fetch'
 alias gprune='git remote prune origin'
 alias gprune_local="git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1};"
@@ -199,6 +200,9 @@ alias connectcds2='ssh consumer_deploy@consumer-data-service-utility2.snc1'
 alias connectcdsuat='ssh consumer_deploy@consumer-data-service-utility1-uat.snc1'
 alias connectcdsapp='ssh consumer_deploy@consumer-data-service-app1.snc1'
 
+alias grant="ssh -p 8081 login1.snc1 login"
+alias revoke="ssh -p 8081 login1.snc1 login -d"
+
 alias addssh="ssh-add ~/.ssh/* && eval 'ssh-agent' && ssh-ad"
 
 alias console='script/console'
@@ -293,7 +297,6 @@ alias use_mri='. script/use_mri'
 alias pry='script/pry'
 alias s='script/server'
 alias tomcat='./script/deploy_to_tomcat.sh'
-
 
 function GRPN(){
   closed_at=$(curl -s 'http://download.finance.yahoo.com/d/quotes.csv?s=grpn&f=p')
