@@ -43,6 +43,9 @@ nnoremap <leader>w :w!<cr>
 " NERDTree shortcuts
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
+" remove NERDTree 'Press ? for help' message
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " CtrlP mappings
 nnoremap <leader>t :CtrlP<CR>
@@ -52,13 +55,14 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 " filetype specific settings settings
 augroup indent_and_whitespace_group
   autocmd!
-  autocmd FileType ruby setlocal ts=2 sw=2 expandtab number
-  autocmd FileType html setlocal ts=2 sw=2 expandtab number
-  autocmd FileType mustache setlocal ts=2 sw=2 expandtab number
-  autocmd FileType javascript setlocal ts=2 sw=2 expandtab number
   autocmd FileType coffee setlocal ts=2 sw=2 expandtab number
-  autocmd FileType vim setlocal ts=2 sw=2 foldmethod=marker
+  autocmd FileType html setlocal ts=2 sw=2 expandtab number
+  autocmd FileType java setlocal ts=4 sw=4 expandtab number
+  autocmd FileType javascript setlocal ts=2 sw=2 expandtab number
+  autocmd FileType mustache setlocal ts=2 sw=2 expandtab number
   autocmd FileType php setlocal ts=4 sw=4 expandtab number
+  autocmd FileType ruby setlocal ts=2 sw=2 expandtab number
+  autocmd FileType vim setlocal ts=2 sw=2 foldmethod=marker
 augroup END
 
 "strip trailing whitespace on save for certain files
