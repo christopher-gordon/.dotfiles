@@ -200,8 +200,8 @@ alias connectcds2='ssh consumer_deploy@consumer-data-service-utility2.snc1'
 alias connectcdsuat='ssh consumer_deploy@consumer-data-service-utility1-uat.snc1'
 alias connectcdsapp='ssh consumer_deploy@consumer-data-service-app1.snc1'
 
-alias grant="ssh -p 8081 login1.snc1 login"
-alias revoke="ssh -p 8081 login1.snc1 login -d"
+alias grant="ssh login.snc1 login"
+alias revoke="ssh login.snc1 login -d"
 
 alias addssh="ssh-add ~/.ssh/* && eval 'ssh-agent' && ssh-ad"
 
