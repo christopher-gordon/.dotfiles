@@ -97,9 +97,9 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 "set nocompatible
 
 
-"" highlight characters in lines that are over 128 chars long
+"" highlight characters in lines that are over 150 chars long
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%129v.\+/
+"match OverLength /\%151v.\+/
 "
 augroup vimrc_autocmds
   autocmd BufEnter *.rb highlight OverLength ctermbg=red ctermfg=white guibg=#592929
