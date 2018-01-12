@@ -99,6 +99,7 @@ export PATH=/usr/local/bin:$PATH
 # export RUBY_GC_MALLOC_LIMIT=50000000
 
 alias gl='git log'
+alias gpoh='git push origin head'
 alias gpom='git pull origin master'
 alias gpum='git pull upstream master'
 alias gfetch='git fetch'

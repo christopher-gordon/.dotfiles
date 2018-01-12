@@ -103,7 +103,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 "
 augroup vimrc_autocmds
   autocmd BufEnter *.rb highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-  autocmd BufEnter *.rb match OverLength /\%129v.\+/
+  autocmd BufEnter *.rb match OverLength /\%151v.\+/
 augroup END
 
 " ================= Turn Off Swap Files ==================
