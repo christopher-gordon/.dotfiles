@@ -1,0 +1,84 @@
+set number
+
+#" comma comma to switch to previous buffer
+
+
+" easier window switching mappings
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+" hit j+k to escape
+inoremap jk <esc>
+
+
+" "fast saving (leader + w)
+" nnoremap <leader>w :w!<cr>
+
+" NERDTree shortcuts
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+" remove NERDTree 'Press ? for help' message
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+
+"strip trailing whitespace on save for certain files
+"(add more file types seperated by commas)
+autocmd FileType ruby,js,haml,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+
+# TODO: Ryan : leader Q to quit
+
+
+# autocomplete plugin / what key
+
+"folding settings (map za to space?)
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+
+# add a shortcut to add binding.pry to the next line
+
+
+"" highlight characters in lines that are over 150 chars long
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%151v.\+/
+"
+augroup vimrc_autocmds
+  autocmd BufEnter *.rb highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+  autocmd BufEnter *.rb match OverLength /\%129v.\+/
+augroup END
+
+
+" copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
+" this is helpful to paste someone the path you're looking at
+nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
+nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>
+
+
+
+map ,p obinding.pry<ESC>
+
+
+" shortcut to refresh ctags
+nmap <leader>c :!ctags -R<CR>
+
+
+" ================= Turn Off Swap Files ==================
+set noswapfile
+set nobackup
+set nowb
+:nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+
+
+
+" add autosave
+
+" add guard
+
+" add plugins 

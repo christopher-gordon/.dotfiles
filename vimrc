@@ -30,6 +30,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" swap left and right splits
+nnoremap <C-x> <C-w>x
 
 " window resizing
 nmap <C-left>  :3wincmd <<cr>
@@ -51,6 +53,9 @@ let NERDTreeDirArrows = 1
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>m :CtrlPMRU<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
+
+" autosave
+autocmd FocusLost,BufLeave,TextChanged,TextChangedI * silent wall
 
 " filetype specific settings settings
 augroup indent_and_whitespace_group

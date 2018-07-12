@@ -15,6 +15,7 @@
     l6 = !git --no-pager log -6
     show-name = show --name-only
     show-name3 = show --name-only -3
+    check-diff=git log master..develop --reverse --pretty=format:'%s %h' --invert-grep --grep=maven-release-plugin
     cached = diff --cached
     addall = add --all
     add-all = add --all
@@ -24,6 +25,7 @@
     tags = tag -l -n1
     diff-color= diff --color-words
     patch= format-patch
+    pr= !"gitpr"
     ctags = !~/.git_template/hooks/ctags
     wip = !"git add . && git commit -m'WIP'"
     tracking = !git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)
