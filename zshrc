@@ -20,6 +20,10 @@ bindkey -v
 
 #. ~/.vim/bundle/vim-powerline/bindings/zsh/powerline.zsh
 
+#nvm
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -91,7 +95,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
-# source ~/.rvm/scripts/rvm
+source ~/.rvm/scripts/rvm
 
 # export RUBY_HEAP_MIN_SLOTS=500000 
 # export RUBY_HEAP_SLOTS_INCREMENT=250000
@@ -154,6 +158,9 @@ alias rserver='./rserver'
 alias start_mysql='mysql.server start'
 alias start_postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stop_postgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+alias mvn-check="mvn -D pmd.verbose=true pmd:check"
+alias mvn-check-cpd="mvn -D pmd.verbose=true pmd:cpd-check"
 
 #alias connectuat='ssh groupon_uat'
 alias connectuat='ssh thepoint@web-utility1-uat.snc1'
@@ -250,13 +257,18 @@ alias p0='rvm use ruby-1.9.3-p0'
 alias aodbot='cd ~/work/aod-bot'
 alias bot='cd ~/work/users-team-bot'
 alias users-bot='cd ~/work/users-team-bot'
-alias tree='cd ~/work/dev_decision_tree'
 alias ddt='cd ~/work/dev_decision_tree'
 alias cc='cd ~/work/command-center'
 alias opsconfig='cd ~/work/ops-config/'
 alias opstools='cd ~/work/ops-tools/'
 alias splunk='cd ~/work/splunk_searches/'
 alias metrics='cd ~/work/metrics/'
+
+alias lazlo='cd ~/work/api-lazlo'
+alias torii='cd ~/work/torii-jtier'
+alias sox='cd ~/work/api-lazlo-sox'
+alias sox-config='cd ~/work/api-lazlo-sox-config'
+alias proxy='cd ~/work/api-proxy'
 
 alias users='cd ~/work/users-service'
 alias ruby-client='cd ~/work/users-service-ruby-client'
@@ -361,3 +373,5 @@ function gendate {
 #########################################
 
 
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

@@ -29,6 +29,7 @@
     ctags = !~/.git_template/hooks/ctags
     wip = !"git add . && git commit -m'WIP'"
     tracking = !git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)
+    undo = !git add -A && git commit -qm 'UNDO SAVEPOINT' && git reset HEAD~1 --hard
 [color]
     ui = true
 [color "branch"]
